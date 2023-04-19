@@ -109,7 +109,7 @@ void setup() {
     cbi(ADCSRA, ADPS0);
 
     Serial.begin(UARTBaudRate);
-    pinMode(LATCHER, INPUT_PULLUP)    //The INPUT_PULLUP can be replaced with an INPUT if 20k to 50k resistors are used between Vcc and Gnd.
+    pinMode(LATCHER, INPUT_PULLUP);    //The INPUT_PULLUP can be replaced with an INPUT if 20k to 50k resistors are used between Vcc and Gnd.
 #ifdef LedPin
     pinMode(LedPin, OUTPUT);
 #endif
@@ -131,7 +131,7 @@ void loop() {
       toggleLed();
       //This if loop foolproofs in case the button is held for longer duration    
       if(!digitalRead(LATCHER)){
-        serial.Println();
+        Serial.println();
       }    
             }
   
